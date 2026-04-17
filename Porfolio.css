@@ -7,11 +7,13 @@ body {
     width: 95%;
     margin: 0%;
     border: 40px rgb(70, 69, 69) solid;
+    background-image: url(playa.avif);
+    background-size: cover;
 }
 
 main {
     margin: 10%;
-    height: 580px;
+    height: 590px;
 }
 
 article {
@@ -51,7 +53,7 @@ header {
 #clock {
     font-size: 24px;
     font-weight: bold;
-    color: #333;
+    color: rgb(0, 220, 236);
     font-family: 'Courier New', monospace;
     letter-spacing: 1px;
     margin: 0;
