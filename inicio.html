@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porfolio</title>
+    <link rel="stylesheet" href="Porfolio.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=adjust,circle,crop_square,play_arrow,wifi" />
+</head>
+<body>
+    <header>
+         <div class="clock-container">
+            <div id="clock">00:00</div>
+        </div>
+        <div><span class="material-symbols-outlined">
+                adjust
+            </span></div>
+        <div><span class="material-symbols-outlined teclas">
+                wifi
+            </span><span id="bateria">100%</span></div>
+    </header>
+    <main>
+        <section>
+            <article><a href=""><img src="favicon2.webp" alt="Imagen de portada">
+                    <div>Mi Primera pagina Web</div>
+            </article></a>
+            <article></article>
+            <article></article>
+            <article></article>
+            <article></article>
+            <article></article>
+        </section>
+    </main>
+    <footer>
+        <div><span class="material-symbols-outlined teclas">
+                crop_square
+            </span></div>
+        <div><span class="material-symbols-outlined teclas">
+                circle
+            </span></div>
+        <div><span class="material-symbols-outlined teclas">
+                play_arrow
+            </span></div>
+    </footer>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const spainTime = new Intl.DateTimeFormat('es-ES', {
+                timeZone: 'Europe/Madrid',
+                hour: '2-digit',
+                minute: '2-digit',
+                hour12: false
+            }).format(now);
+            document.getElementById('clock').textContent = spainTime;
+        }
+        updateClock();
+        setInterval(updateClock, 1000);
+    </script>
+</body>
+</html>
