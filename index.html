@@ -1,65 +1,90 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">        
-        <link rel="icon" href="favicon.ico" type="image/x-icon">
-
-
-    <title>Porfolio</title>
-    <link rel="stylesheet" href="Porfolio.css">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=adjust,circle,crop_square,play_arrow,wifi" />
-</head>
-<body>
-    <header>
-         <div class="clock-container">
-            <div id="clock">00:00</div>
-        </div>
-        <div><span class="material-symbols-outlined">
-                adjust
-            </span></div>
-        <div><span class="material-symbols-outlined teclas">
-               wifi &nbsp;
-            </span><span id="bateria">100%</span></div>
-    </header>
-    <main>
-        <section>
-            <article><a href="https://crades12.github.io/" target="_blank"><img src="fondo.webp" alt="Imagen de portada">
-                    <div>Mi Primera pagina Web</div>
-            </article></a>
-            <article></article>
-            <article></article>
-            <article></article>
-            <article></article>
-            <article></article>
-        </section>
-    </main>
-    <footer>
-        <div><span class="material-symbols-outlined teclas">
-                crop_square
-            </span></div>
-        <div><span class="material-symbols-outlined teclas">
-                circle
-            </span></div>
-        <div><span class="material-symbols-outlined teclas">
-                play_arrow
-            </span></div>
-    </footer>
-
-    <script>
-        function updateClock() {
-            const now = new Date();
-            const spainTime = new Intl.DateTimeFormat('es-ES', {
-                timeZone: 'Europe/Madrid',
-                hour: '2-digit',
-                minute: '2-digit',
-                hour12: false
-            }).format(now);
-            document.getElementById('clock').textContent = spainTime;
-        }
-        updateClock();
-        setInterval(updateClock, 1000);
-    </script>
-</body>
-</html>
+<!DOCTYPE html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Abel González · Porfolio</title>
+<style>
+:root{--pg:#e9e4f2;--pgt:#222;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--pg:#14121a;--pgt:#eee}}
+:root[data-theme="dark"]{--pg:#14121a;--pgt:#eee}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:grid;place-items:center;align-content:center;background:var(--pg);color:var(--pgt);font:14px/1.4 system-ui,-apple-system,"Segoe UI",sans-serif}
+#hint{font-size:.8rem;opacity:.7;text-align:center;margin:10px}
+#phone{--bg:#f4f5fa;--cd:#fff;--tx:#1b1d29;--mu:#666b80;--ac:#5b5bd6;--ic:56px;position:relative;width:min(96vw,calc(min(84vh,720px)*9/19));aspect-ratio:9/19;border:8px solid #0c0c10;border-radius:34px;overflow:hidden;background:#000;box-shadow:0 12px 40px #0006;transition:width .5s,aspect-ratio .5s;color:var(--tx);user-select:none;touch-action:pan-y}
+#phone.ld{width:min(96vw,720px,calc(84vh*19/9));aspect-ratio:19/9}
+#phone.dk{--bg:#12131c;--cd:#1d1f2d;--tx:#eceef7;--mu:#9aa0b8;--ac:#9a9aff}
+#scr>div{position:absolute;inset:0}
+#home{background:radial-gradient(circle at 25% 15%,#8a8af0,transparent 55%),radial-gradient(circle at 85% 85%,#f090b8,transparent 55%),#2b2f6b;padding:40px 12px 28px;overflow:auto;color:#fff}
+.dk #home{background:radial-gradient(circle at 25% 15%,#3a3a8a,transparent 55%),radial-gradient(circle at 85% 85%,#7a3a60,transparent 55%),#0d0e1c}
+#wid{background:#ffffff26;backdrop-filter:blur(8px);border-radius:18px;padding:12px 14px;margin-bottom:14px}#wid b{font-size:1.1rem}#wid p{margin:2px 0 0;font-size:.85rem;opacity:.9}
+#grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(calc(var(--ic) + 16px),1fr));gap:14px 4px}
+.ap{display:flex;flex-direction:column;align-items:center;gap:4px;background:none;border:0;color:inherit;font:inherit;font-size:.72rem;cursor:pointer;animation:pop .5s backwards}
+.ap i{width:var(--ic);height:var(--ic);border-radius:26%;display:grid;place-items:center;font-style:normal;font-size:calc(var(--ic)*.5);box-shadow:0 3px 8px #0004;transition:width .3s,height .3s,font-size .3s}
+.ap:active i{transform:scale(.9)}
+@keyframes pop{from{transform:scale(.3);opacity:0}}
+#dock{position:absolute;left:10px;right:10px;bottom:24px;display:flex;justify-content:center;gap:18px;background:#ffffff26;backdrop-filter:blur(8px);border-radius:24px;padding:8px}
+#app{background:var(--bg);display:flex;flex-direction:column;transform:scale(.85);opacity:0;pointer-events:none;transition:.25s}#app.on{transform:none;opacity:1;pointer-events:auto}
+#ah{padding:38px 12px 8px;display:flex;align-items:center;gap:8px;font-size:1.05rem}#ah button{border:0;background:none;color:var(--ac);font-size:1.6rem;cursor:pointer;line-height:1}
+#ab{flex:1;overflow:auto;padding:4px 14px 34px}
+.cd{background:var(--cd);border-radius:14px;padding:12px 14px;margin:0 0 10px;box-shadow:0 1px 4px #0001}.cd h3{margin:0 0 4px;font-size:1rem}.cd p{margin:2px 0;color:var(--mu)}.cd a{color:var(--ac)}
+.tg{display:inline-block;font-size:.72rem;background:var(--bg);color:var(--ac);border-radius:99px;padding:2px 8px;margin:4px 4px 0 0}
+.bd{color:var(--ac);font-size:.78rem;font-weight:600}
+#lock{background:radial-gradient(circle at 30% 20%,#7a7aea,transparent 55%),radial-gradient(circle at 80% 90%,#ee88b0,transparent 55%),#23265a;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;transition:transform .7s cubic-bezier(.7,0,.3,1),opacity .7s;z-index:3;cursor:pointer}
+#lock.off{transform:translateY(-100%);opacity:0;pointer-events:none}
+#lk{font-size:3.6rem;font-weight:200;line-height:1}#ld{opacity:.9}#sw{position:absolute;bottom:40px;text-align:center;animation:up 1.6s infinite}@keyframes up{50%{transform:translateY(-10px);opacity:.5}}
+#shade{z-index:4;background:#000a;transform:translateY(-100%);transition:transform .35s;padding:42px 12px 12px;display:flex;flex-direction:column;gap:10px;bottom:auto!important;max-height:100%;overflow:auto;border-radius:0 0 22px 22px;background:var(--bg);color:var(--tx)}
+#shade.on{transform:none;box-shadow:0 0 0 100vh #0006}
+.tl{display:flex;flex-wrap:wrap;gap:8px}.tl button,.sz button{font:inherit;border:0;border-radius:14px;background:var(--cd);color:var(--tx);padding:10px 12px;cursor:pointer;flex:1;min-width:90px}.tl button.on,.sz button.on{background:var(--ac);color:#fff}
+.sz{display:flex;gap:6px;align-items:center}.sz span{color:var(--mu)}#nl{font-size:.82rem;color:var(--mu)}#nl div{background:var(--cd);border-radius:10px;padding:6px 10px;margin-top:6px;color:var(--tx)}
+#nt{z-index:5;bottom:auto!important;margin:36px 10px 0;background:var(--cd);color:var(--tx);border-radius:16px;padding:10px 12px;box-shadow:0 6px 20px #0006;transform:translateY(-250%);opacity:0;transition:transform .4s,opacity .3s;cursor:pointer;font-size:.85rem}#nt.on{transform:none;opacity:1}
+#sb{z-index:6;bottom:auto!important;height:32px;display:flex;justify-content:space-between;align-items:center;padding:6px 16px 0;color:#fff;font-weight:600;font-size:.8rem;cursor:grab;mix-blend-mode:normal;text-shadow:0 1px 3px #0008}
+#app.on~#sb{color:var(--tx);text-shadow:none}
+#bt{display:inline-block;width:22px;height:11px;border:1.5px solid currentColor;border-radius:3px;margin:0 4px -1px 0;padding:1px;position:relative}#bt i{display:block;height:100%;background:currentColor;border-radius:1px}#bt.lo i{background:#e5484d}
+#gb{position:absolute;left:50%;bottom:6px;width:34%;height:5px;border-radius:9px;background:#fff;opacity:.7;transform:translateX(-50%);z-index:6;cursor:pointer;box-shadow:0 0 3px #0006}
+.ms{padding:8px 11px;border-radius:14px;margin:6px 0;max-width:85%;background:var(--cd)}.ms.me{margin-left:auto;background:var(--ac);color:#fff}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}.chips button{font:inherit;font-size:.8rem;border:1px solid var(--ac);background:none;color:var(--ac);border-radius:99px;padding:5px 10px;cursor:pointer}
+</style></head><body>
+<div id="phone"><div id="scr">
+<div id="home"><div id="wid"><b>Hola, soy Abel 👋</b><p>Estudiante de ASIR · Madrid</p></div><div id="grid"></div><div id="dock"></div></div>
+<div id="app"><div id="ah"><button id="bk" aria-label="Volver">‹</button><b id="at"></b></div><div id="ab"></div></div>
+<div id="lock"><div id="lk"></div><div id="ld"></div><div id="sw">⌃<br>Desliza hacia arriba</div></div>
+<div id="shade"><div class="tl"><button id="tD">🌙 Modo oscuro</button><button id="tR">🔄 Girar móvil</button></div><div class="sz"><span>Iconos</span><button data-s="44">Pequeños</button><button data-s="56" class="on">Medios</button><button data-s="72">Grandes</button></div><div id="nl">Notificaciones</div></div>
+<div id="nt"></div><div id="sb"><span id="tm"></span><span><span id="bt"><i></i></span><span id="bp">100%</span></span></div><div id="gb" title="Inicio"></div>
+</div></div>
+<p id="hint">Desliza hacia abajo desde la barra superior para ajustes</p>
+<script>
+var $=function(i){return document.getElementById(i)},P=$("phone"),t0=Date.now(),fired={},hist=[];
+var A={
+sobre:["🙂","Sobre mí","#5b8def",'<div class=cd><h3>Abel González Guerra</h3><p>Estudiante de 2º de Administración de Sistemas Informáticos en Red (ASIR) en Madrid.</p><p>Aprendo a instalar, configurar y mantener los equipos, servidores y redes de una empresa, con interés en la ciberseguridad.</p></div>'],
+form:["🎓","Formación","#e2a13b",'<div class=cd><span class=bd>2026 – 2027 · en curso</span><h3>ASIR · 2º curso</h3><p>Seguridad, servicios de red, bases de datos, aplicaciones web y arquitectura en la nube.</p></div><div class=cd><span class=bd>2025 – 2026</span><h3>ASIR · 1º curso</h3><p>Ciclo Formativo de Grado Superior en Administración de Sistemas Informáticos en Red.</p></div><div class=cd><span class=bd>2025</span><h3>Bachillerato de Informática</h3></div>'],
+exp:["💼","Experiencia","#3bb273",'<div class=cd><span class=bd>Junio 2026 · 160 h</span><h3>Prácticas administrativas</h3><p>Empresa Aferta SG</p></div>'],
+hab:["🛠️","Habilidades","#8a5be0",'<div class=cd><h3>Servidores y sistemas</h3><p>Gestiono usuarios y equipos de una empresa.</p><span class=tg>Linux</span><span class=tg>Windows Server</span><span class=tg>Active Directory</span></div><div class=cd><h3>Redes y servicios</h3><p>Pongo en marcha webs, correo y redes.</p><span class=tg>DNS</span><span class=tg>DHCP</span><span class=tg>Apache</span><span class=tg>Nginx</span><span class=tg>Correo</span><span class=tg>LDAP</span><span class=tg>FTP</span></div><div class=cd><h3>Web y bases de datos</h3><p>Creo páginas y guardo su información.</p><span class=tg>HTML</span><span class=tg>CSS</span><span class=tg>PHP</span><span class=tg>JavaScript</span><span class=tg>MySQL</span></div><div class=cd><h3>Automatización y nube</h3><p>Hago que las tareas se hagan solas y que los servicios no se caigan.</p><span class=tg>Bash</span><span class=tg>Ansible</span><span class=tg>Docker</span><span class=tg>Alta disponibilidad</span><span class=tg>AWS/Azure (básico)</span></div>'],
+cert:["🏆","Certificados","#e5484d",'<div class=cd><span class=bd>Octubre 2025</span><h3>Cisco · Hardware de computadoras</h3></div><div class=cd><span class=bd>Marzo 2026</span><h3>Cisco · Active Directory</h3></div><div class=cd><span class=bd>Previsto 2027</span><h3>Cisco · Junior en Ciberseguridad</h3></div>'],
+idi:["🌍","Idiomas","#2aa7c9",'<div class=cd><h3>Inglés · B2</h3><p>Nivel adquirido en Bachillerato. El examen oficial está pendiente.</p></div>'],
+hob:["🎮","Hobbies","#e86aa6",'<div class=cd><h3>Fuera de clase</h3><p>📖 Lectura · 🎮 Videojuegos · 🏀 Baloncesto · 🏊 Natación</p></div>'],
+con:["✉️","Contacto","#4a4f66",'<div class=cd><h3>Hablemos</h3><p>✉ <a href="mailto:abelgonzalezguerra@gmail.com">abelgonzalezguerra@gmail.com</a></p><p>☎ <a href="tel:+34683594910">+34 683 59 49 10</a></p><p>🔗 <a href="https://www.linkedin.com/in/abel-gonz%C3%A1lez-guerra-53970a405">LinkedIn</a></p><p>📍 Madrid, España</p></div>'],
+chat:["💬","Pregunta a Abel","#25a05b",""]};
+var R={"¿Qué estudias?":"Estoy en 2º de ASIR: administración de sistemas y redes informáticas.","¿Qué sabes hacer?":"Configurar servidores y redes, gestionar usuarios, montar webs y bases de datos, y automatizar tareas.","¿Tienes experiencia?":"Hice 160 h de prácticas administrativas en Aferta SG en junio de 2026.","¿Cómo te contacto?":"Por email abelgonzalezguerra@gmail.com o por LinkedIn. Los tienes en la app Contacto."};
+function mk(k,p){var a=A[k],b=document.createElement("button");b.className="ap";b.innerHTML='<i style="background:'+a[2]+'">'+a[0]+'</i>'+(p?"":a[1]);b.setAttribute("aria-label",a[1]);b.onclick=function(){openApp(k)};return b}
+var g=$("grid");["sobre","form","exp","hab","cert","idi","hob","con"].forEach(function(k,i){var b=mk(k);b.style.animationDelay=(.7+i*.07)+"s";g.appendChild(b)});
+["chat","con"].forEach(function(k){$("dock").appendChild(mk(k,1))});
+function openApp(k){var a=A[k];$("at").textContent=a[1];$("app").className="on";shade(0);
+ if(k=="chat"){$("ab").innerHTML='<div id=cm></div><div class=chips id=cc></div>';say("Hola 👋 Soy Abel. ¿Qué quieres saber?");Object.keys(R).forEach(function(q){var b=document.createElement("button");b.textContent=q;b.onclick=function(){$("cm").innerHTML+='<div class="ms me">'+q+'</div>';setTimeout(function(){say(R[q])},500)};$("cc").appendChild(b)})}
+ else $("ab").innerHTML=a[3];$("ab").scrollTop=0}
+function say(t){$("cm").innerHTML+='<div class=ms>'+t+'</div>'}
+function home(){$("app").className=""}$("bk").onclick=home;$("gb").onclick=home;
+/* bloqueo */
+function unlock(){if($("lock").className=="off")return;$("lock").className="off";setTimeout(function(){notify("👋 Bienvenido. Desliza hacia abajo desde arriba para cambiar el modo oscuro, el tamaño de los iconos o girar el móvil.")},1400)}
+var y0=null;$("lock").onpointerdown=function(e){y0=e.clientY};$("lock").onpointerup=function(e){if(y0!=null&&(y0-e.clientY>40||Math.abs(y0-e.clientY)<6))unlock();y0=null};
+/* panel de ajustes */
+var op=0;function shade(o){op=o;if(o)$("nt").className="";$("shade").className=o?"on":""}
+var sy=null,sb=$("sb");sb.onpointerdown=function(e){sy=e.clientY;sb.setPointerCapture(e.pointerId)};sb.onpointermove=function(e){if(sy!=null&&e.clientY-sy>25){shade(1);sy=null}};sb.onpointerup=function(){if(sy!=null)shade(!op);sy=null};
+var uy=null;$("shade").onpointerdown=function(e){uy=e.clientY};$("shade").onpointerup=function(e){if(uy!=null&&uy-e.clientY>40)shade(0);uy=null};
+$("tD").onclick=function(){P.classList.toggle("dk");this.classList.toggle("on")};$("tR").onclick=function(){P.classList.toggle("ld");this.classList.toggle("on")};
+document.querySelectorAll(".sz button").forEach(function(b){b.onclick=function(){P.style.setProperty("--ic",b.dataset.s+"px");document.querySelectorAll(".sz button").forEach(function(x){x.classList.toggle("on",x==b)})}});
+if(matchMedia("(prefers-color-scheme: dark)").matches){P.classList.add("dk");$("tD").classList.add("on")}
+/* notificaciones */
+var nto;function notify(t,go){hist.unshift(t);$("nl").innerHTML="Notificaciones"+hist.map(function(h){return"<div>"+h+"</div>"}).join("");var n=$("nt");n.textContent=t;n.className="on";n.onclick=function(){n.className="";openApp(go||"con")};n.onclick=go?n.onclick:function(){n.className=""};clearTimeout(nto);nto=setTimeout(function(){n.className=""},7000)}
+/* reloj y batería */
+function tick(){var d=new Date(),s=Math.floor((Date.now()-t0)/1000),b=Math.max(5,100-Math.floor(s/6));
+ var hm=d.toLocaleTimeString("es-ES",{hour:"2-digit",minute:"2-digit"});$("tm").textContent=hm;$("lk").textContent=hm;var ds=d.toLocaleDateString("es-ES",{weekday:"long",day:"numeric",month:"long"});$("ld").textContent=ds.charAt(0).toUpperCase()+ds.slice(1);
+ $("bp").textContent=b+"%";$("bt").firstChild.style.width=b+"%";$("bt").className=b<=20?"lo":"";
+ [85,60,20].forEach(function(th){if(b<=th&&!fired[th]){fired[th]=1;var m=Math.floor(s/60),r=s%60,tt=(m?m+" min ":"")+r+" s";notify("🔋 Tu batería está al "+b+"%. Llevas "+tt+" aquí: igual te interesa hablar con Abel. Toca para contactar.","con")}})}
+tick();setInterval(tick,1000);
+</script></body></html>
